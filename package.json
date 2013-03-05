@@ -23,7 +23,12 @@
     "log": "1.3.0",
     "connect": "2.3.4",
     "connect_router": "1.8.6",
-    "hubot-skypekit": "git+ssh://git@github.com:maxgoedjen/hubot-skypekit.git"
+    "hubot-skypekit": "git+ssh://git@github.com:maxgoedjen/hubot-skypekit.git",
+    "scraper": "0.0.9",
+    "aws2js": "0.6.12",
+    "underscore": "1.3.3",
+    "moment": "1.6.2"
+
   },
 
   "engines": {
