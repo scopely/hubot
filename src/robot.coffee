@@ -117,7 +117,6 @@ class Robot
   #
   # Returns nothing.
   receive: (message) ->
-    console.log "HIT"
     results = []
     for listener in @listeners
       try
