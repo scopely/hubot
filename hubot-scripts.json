@@ -13,5 +13,6 @@
   "teamcity.coffee",
   "tweet.coffee",
   "wunderground.coffee",
-  "xkcd.coffee"
+  "xkcd.coffee",
+  "youtube-info.coffee"
 ]
