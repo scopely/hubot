@@ -14,5 +14,8 @@
   "tweet.coffee",
   "wunderground.coffee",
   "xkcd.coffee",
-  "youtube-info.coffee"
+  "youtrack.coffee",
+  "youtube-info.coffee",
+  
+  "test.coffee"
 ]
