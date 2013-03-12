@@ -10,6 +10,7 @@
   "newrelic.coffee",
   "reddit-jokes.coffee",
   "scopely-mail.coffee",
+  "scopely_maillistener.coffee",
   "sealab.coffee",
   "spotify.coffee",
   "shipit.coffee",
