@@ -16,7 +16,8 @@
 
   "dependencies": {
     "hubot": "2.4.7",
-    "hubot-scripts": "git://github.com/scopely/hubot-scripts.git",
+    "hubot-scripts": "git://github.com/github/hubot-scripts.git",
+    "scopely-scripts": "git+ssh://github.com/scopely/hubot-scopely-scripts.git",
     "coffee-script": "~> 1.4.0",
     "optparse": "1.0.3",
     "scoped-http-client": "0.9.7",
