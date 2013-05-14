@@ -39,6 +39,15 @@ class Response
   topic: (strings...) ->
     @robot.adapter.topic @envelope, strings...
 
+  # Public: Play a sound in the chat source
+  #
+  # strings - One or more strings to be posted as sounds to play. The order of
+  #           these strings should be kept intact.
+  #
+  # Returns nothing
+  play: (strings...) ->
+    @robot.adapter.play @envelope, strings...
+
   # Public: Picks a random item from the given items.
   #
   # items - An Array of items.
@@ -60,6 +69,7 @@ class Response
   #
   # Returns a ScopedClient instance.
   http: (url) ->
+    @robot.logger.warning '@http() is going to be deprecated in 3.0.0 use @robot.http()'
     @robot.http(url)
 
 module.exports = Response

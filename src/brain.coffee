@@ -2,16 +2,49 @@
 
 User = require './user'
 
-# http://www.the-isb.com/images/Nextwave-Aaron01.jpg
 class Brain extends EventEmitter
   # Represents somewhat persistent storage for the robot. Extend this.
   #
   # Returns a new Brain with no external storage.
   constructor: ->
-    @data = users: { }
+    @data =
+      users:    { }
+      _private: { }
+      
     @resetSaveInterval 5
 
-  # Public: Emits the 'save' event so that 'brain' scripts can handle persisting.
+  # Public: Store key-value pair under the private namespace and extend
+  # existing @data before emitting the 'loaded' event.
+  #
+  # Returns the instance for chaining.
+  set: (key, value) ->
+    if key is Object(key)
+      pair = key
+    else
+      pair = {}
+      pair[key] = value
+
+    extend @data._private, pair
+    @emit 'loaded', @data
+    @
+
+  # Public: Get value by key from the private namespace in @data
+  # or return null if not found.
+  #
+  # Returns the value.
+  get: (key) ->
+    @data._private[key] ? null
+  
+  # Public: Remove value by key from the private namespace in @data
+  # if it exists
+  #
+  # Returns the instance for chaining.
+  remove: (key) ->
+    delete @data._private[key] if @data._private[key]?
+    @
+  
+  # Public: Emits the 'save' event so that 'brain' scripts can handle
+  # persisting.
   #
   # Returns nothing.
   save: ->
@@ -99,11 +132,17 @@ class Brain extends EventEmitter
   usersForFuzzyName: (fuzzyName) ->
     matchedUsers = @usersForRawFuzzyName(fuzzyName)
     lowerFuzzyName = fuzzyName.toLowerCase()
-    # We can scan matchedUsers rather than all users since usersForRawFuzzyName
-    # will include exact matches
     for user in matchedUsers
       return [user] if user.name.toLowerCase() is lowerFuzzyName
 
     matchedUsers
+  
+# Private: Extend obj with objects passed as additional args.
+#
+# Returns the original object with updated changes.
+extend = (obj, sources...) ->
+  for source in sources
+    obj[key] = value for own key, value of source
+  obj
 
 module.exports = Brain
