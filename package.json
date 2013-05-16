@@ -26,6 +26,7 @@
   "dependencies": {
     "hubot": "2.5.1",
     "hubot-scripts": "2.4.3",
+    "hubot-python-scripts": "git://github.com/maxgoedjen/hubot-python-scripts.git",
     "hubot-scopely-scripts": "git+ssh://git@github.com:scopely/hubot-scopely-scripts.git",
     "connect": "2.3.4",
     "connect_router": "1.8.6",
