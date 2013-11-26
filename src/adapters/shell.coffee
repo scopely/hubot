@@ -12,9 +12,12 @@ class Shell extends Adapter
       console.log "#{str}" for str in strings
     @repl.prompt()
 
+  emote: (envelope, strings...) ->
+    @send envelope, "* #{str}" for str in strings
+
   reply: (envelope, strings...) ->
     strings = strings.map (s) -> "#{envelope.user.name}: #{s}"
-    @send envelope.user, strings...
+    @send envelope, strings...
 
   run: ->
     self = @
