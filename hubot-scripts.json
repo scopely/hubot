@@ -6,6 +6,7 @@
   "corgime.coffee",
   "chuck-norris.coffee",
   "darksky.coffee",
+  "flip.coffee",
   "github-pull-request-notifier.coffee",
   "gob.coffee",
   "howdoi.coffee",
