@@ -41,7 +41,10 @@
     "optparse":           "1.0.4",
     "scoped-http-client": "0.9.8",
     "log":                "1.4.0",
-    "express":            "3.3.4"
+    "express":            "3.3.4",
+    "flip": "~0.1.0",
+    "jsdom": "0.2.15",
+    "clark": "0.0.6"
   },
 
   "engines": {
